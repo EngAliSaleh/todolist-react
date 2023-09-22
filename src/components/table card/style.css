@@ -1,0 +1,41 @@
+.table-card {
+    border-radius: 10px;
+    box-shadow: 0 0 100px rgb(209, 207, 207);
+    width: 55%;
+    margin: 15px auto;
+    font-family: 'Inter', sans-serif;
+    padding: 25px;
+    background-color: white;
+    
+}
+
+.table-card h2 {
+    margin-bottom: 20px;  
+}
+
+.content-table {
+    border-collapse: collapse;
+    font-size: 14.5px;
+    min-width: 550px;
+    overflow: hidden;
+    margin: auto;
+}
+
+
+.content-table thead tr {
+    background-color: rgb(235, 234, 234);
+}
+
+.content-table th,
+.content-table td {
+    padding: 12px 15px;
+    text-align: center;
+}
+
+.content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+table td {
+    width:35%;
+}

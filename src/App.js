@@ -1,24 +1,46 @@
-import logo from './logo.svg';
+/* eslint-disable no-unused-vars */
+// eslint-disable-next-line no-unused-vars
 import './App.css';
+import TodoCard from './components/todo card';
+import TableCard from './components/table card';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
-function App() {
+
+function App(onClick) {
+  const [value, setValue] = useState("");
+  const [data, setData] = useState([]);
+  
+  const handelChange = (e) => {
+    setValue(e.target.value)
+  }
+  async function fetchData() {
+    try {
+      const response = await axios.get('https://jsonplaceholder.typicode.com/todos');
+      setData(response.data.slice(0 , 0)) //اظهار العدد المطلوب
+    }
+    catch {
+      console.error("Error");
+
+    }
+
+
+  }
+
+
+
+  useEffect(() => {
+    fetchData();
+
+  }, [])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container' >
+      <h2 className='h2'>TODO List</h2>
+      <TodoCard value={value} onchange={handelChange} setData={setData} data={data} setValue={setValue} />
+      <TableCard data={data} setData={setData} onClick={onClick} />
     </div>
+
+
   );
 }
 

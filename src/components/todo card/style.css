@@ -1,0 +1,27 @@
+.card {
+    border-radius: 10px;
+    box-shadow: 0 0 100px rgb(209, 207, 207);
+    padding: 10px;
+    width:55%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    background-color: white;
+}
+
+.todo-input {
+    border: none;
+    border-bottom: 2px solid rgb(199, 71, 32); 
+    margin-bottom: 20px;
+    margin-top: 30px;
+    width: 300px;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+}
+
+.todo-input::placeholder {
+    text-align: start;
+    font-size: 15px;
+}
